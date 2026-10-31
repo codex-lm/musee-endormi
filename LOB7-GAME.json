@@ -1,0 +1,11 @@
+{
+  "title": "The Sleeping Museum",
+  "description": "A turn-based stealth puzzle in a night museum: every step you take, the guards take one too. Read their lantern beams, hide behind display cases, grab the enchanted gems and slip out. One-use decoy, 8 levels, medals for perfect runs.",
+  "entrypoint": "index.html",
+  "license": "MIT",
+  "genre": ["puzzle", "strategy"],
+  "themes": ["stealth", "museum", "turn-based"],
+  "controls": ["Arrows or WASD/ZQSD: move", "Space: wait a turn", "L or X: throw the decoy", "U: undo, R: restart", "Touch: on-screen pad and buttons"],
+  "credits": ["Concept: Cédric Bernadac", "Game made by Z-Code"],
+  "cover": "cover.png"
+}

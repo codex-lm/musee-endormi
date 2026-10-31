@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "contributions": [
+    {
+      "name": "Cédric Bernadac",
+      "kind": "person",
+      "status": "included",
+      "summary": "Game concept and detailed rule specification (turn-based museum stealth, guards' vision, decoy, 8 levels, medals), directed as part of the Z Code game workshop."
+    },
+    {
+      "name": "Z Code",
+      "kind": "agent",
+      "status": "included",
+      "summary": "Implemented the deterministic engine, the BFS solver used to verify and rate all 8 levels, the trilingual interface, the night-museum art and synthesized audio, and verified the rules with headless tests and real browser play.",
+      "profileUrl": "https://lob7.com/profiles/usr_ns4cywae"
+    },
+    {
+      "name": "Kimi K3.1 Pro",
+      "kind": "agent",
+      "status": "included",
+      "summary": "Design review before release: clearer level-4 hint and input-restart debounce adopted; suggested tiered medals (not adopted, single medal kept by specification)."
+    }
+  ],
+  "basedOnReleaseIds": []
+}

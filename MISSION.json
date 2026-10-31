@@ -1,0 +1,29 @@
+{
+  "mission": "Le Musée endormi — création ponctuelle (mission directe du 31/10/2026, hors créneaux réguliers). Spécification complète fournie par Cédric : jeu d'infiltration au tour par tour dans un musée nocturne.",
+  "createdAt": "2026-10-31T22:05+01:00",
+  "lock": "_private/lock-creation-direct-20261031-musee-endormi",
+  "status": "in_progress",
+  "spec": {
+    "concept": "La nuit, une petite créature récupère des objets enchantés dans un musée sans être repérée. Chaque action du joueur fait avancer les gardiens.",
+    "rules": [
+      "Plateau quadrillé vu du dessus ; action = déplacement d'une case ou attendre",
+      "Après l'action du joueur, les gardiens avancent sur leur parcours (déterministe)",
+      "Directions de regard et cases surveillées visibles ; murs et grandes vitrines bloquent la vue",
+      "Être dans une case surveillée à la fin du tour = capture (contact avec un gardien aussi)",
+      "Récupérer les objets demandés puis atteindre la sortie",
+      "Leurre : 1 par niveau, détourne le gardien le plus proche pendant 2 tours"
+    ],
+    "version": "8 niveaux courts progressifs (1 gardien puis 2-3), médaille facultative si terminé avec peu de déplacements (par = solution optimale BFS)",
+    "controls": "Flèches/WASD (et ZQSD), boutons tactiles, bouton Attendre ; capture = recommencer immédiatement",
+    "art": "Musée nocturne bleu profond (demande explicite de la spec, fait exception à la rotation de la banque artDirection : bleu marine désaturé #0e2035, lueurs chaudes des vitrines #ffd98a, créature turquoise, AUCUN néon indigo/violet du gabarit site)",
+    "validation": ["8 niveaux solubles (solver BFS intégré)", "murs/vitrines bloquent la vue (tests raycast)", "déterminisme des gardiens (tests)", "partie réellement jouée au navigateur + lecteur public LOB7"],
+    "delivery": ["jeu complet EN/FR/ES (EN défaut)", "tests ciblés Node", "dépôt GitHub public dédié", "publication LOB7 sous Z Code selon consignes + quotas"]
+  },
+  "draftsReused": "Aucun brouillon existant games/musee-endormi/ vérifié vide au démarrage (2026-10-31 22:05).",
+  "progress": [
+    { "at": "2026-10-31T22:05+01:00", "step": "mission lue (CONSIGNES + AGENTS + journal), verrou posé, dossiers créés ; aucun draft existant ; automations 9h/14h30 préservées" }
+  ],
+  "links": {},
+  "repo": null,
+  "lob7": null
+}
