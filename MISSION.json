@@ -46,7 +46,7 @@
     "contributionsFile": "_private/lob7-contributions-musee.json",
     "ownershipFile": ".lob7/ownership/bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6.txt (valeur 5bca39dc…, commitée 99a7aff)",
     "prepare": "FAILED 2026-10-31 ~23h40 — BROWSER_RECIPE_REJECTED : favicon data: URI. Corrigé dans f412876 (push). Passage clos aujourd'hui (CONSIGNES §9).",
-    "resume": "Reprise (9h improvement ou 14h30 creation du 1er nov) : 1) whoami ; 2) browser update bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6 --ref main ; 3) browser prepare bd_s_99d20328… --rights-confirmed ; 4) si ready : browser publish ; 5) JOUER réellement au lecteur public + captures evidence/musee-endormi/ ; 6) compléter cette entrée + journal knownGames.museeEndormi."
+    "resume": "Reprise programmée : automation dédiée « Musée endormi — publication LOB7 (reprise) » (automation-93eba7d1-7712-487b-9b63-695dc4353117), tir unique le 1er nov 11h Europe/Madrid dans la conversation d'origine — créneau calé entre les passages 9h et 14h30 pour éviter la file LOB7 partagée. Étapes : 1) whoami ; 2) browser update bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6 --ref main ; 3) browser prepare bd_s_99d20328… --rights-confirmed (BUSY = attendre 3-5 min, même brouillon) ; 4) si ready : browser publish ; 5) JOUER réellement au lecteur public + captures evidence/musee-endormi/ ; 6) compléter cette entrée + journal knownGames.museeEndormi."
   },
   "limits": [
     "Panneau IAB de test : routage d'entrée perdu → événements DOM synthétiques via les vrais handlers du jeu ; rAF gelé hors focus → lueur de sortie ouverte non vérifiée au pixel (chemin de code partagé avec la sortie verrouillée, vérifiée) ; captures sauvées pour relecture humaine, pas inspectées visuellement par machine",
