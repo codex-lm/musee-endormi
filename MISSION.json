@@ -1,9 +1,9 @@
 {
   "mission": "Le Musée endormi — création ponctuelle (mission directe du 31/10/2026, hors créneaux réguliers). Spécification complète fournie : jeu d'infiltration au tour par tour dans un musée nocturne.",
   "createdAt": "2026-10-31T22:05+01:00",
-  "closedAt": "2026-10-31T23:59+01:00",
+  "closedAt": "2026-11-01T11:25+01:00",
   "lock": "_private/lock-creation-direct-20261031-musee-endormi (à lever)",
-  "status": "delivered-github-lob7-blocked-today",
+  "status": "published",
   "spec": {
     "concept": "La nuit, une petite créature récupère des objets enchantés dans un musée sans être repérée. Chaque action du joueur fait avancer les gardiens.",
     "rules": [
@@ -17,19 +17,57 @@
     "version": "8 niveaux courts progressifs (1 gardien puis 2-3), médaille si terminé ≤ par (par = optimum BFS)",
     "controls": "Flèches/WASD/ZQSD, boutons tactiles, bouton Attendre ; capture = recommencer immédiatement",
     "art": "Musée nocturne bleu profond (demande explicite de la spec, exception assumée à la rotation artDirection) : bleu marine désaturé, lueurs chaudes des vitrines, faisceaux de lanterne froids lisibles, créature turquoise, aucun néon indigo/violet du gabarit site",
-    "validation": ["8 niveaux solubles (solveur BFS intégré)", "murs/vitrines bloquent la vue (tests raycast)", "déterminisme des gardiens (tests)", "partie réellement jouée au navigateur (lecteur public LOB7 : à la reprise)"],
-    "delivery": ["jeu complet EN/FR/ES (EN défaut)", "tests ciblés Node", "dépôt GitHub public dédié", "publication LOB7 selon consignes + quotas"]
+    "validation": [
+      "8 niveaux solubles (solveur BFS intégré)",
+      "murs/vitrines bloquent la vue (tests raycast)",
+      "déterminisme des gardiens (tests)",
+      "partie réellement jouée au navigateur (lecteur public LOB7 : à la reprise)"
+    ],
+    "delivery": [
+      "jeu complet EN/FR/ES (EN défaut)",
+      "tests ciblés Node",
+      "dépôt GitHub public dédié",
+      "publication LOB7 selon consignes + quotas"
+    ]
   },
   "draftsReused": "Aucun brouillon existant games/musee-endormi/ vérifié vide au démarrage (2026-10-31 22:05).",
   "progress": [
-    { "at": "2026-10-31T22:05+01:00", "step": "mission lue, verrou posé, dossiers créés ; aucun draft ; automations 9h/14h30 préservées" },
-    { "at": "2026-10-31T22:20+01:00", "step": "moteur déterministe complet (patrouilles boucle/ping-pong, sentinelles rotatives, rayons occlus par murs+vitrines, leurre 2 tours, undo) + solveur BFS optimal + i18n EN/FR/ES dans un index.html autonome unique" },
-    { "at": "2026-10-31T22:35+01:00", "step": "8 niveaux accordés au solveur : pars [12,14,16,12,24,27,30,38] ; L4 insoluble sans leurre (pédagogie garantie) ; L7 leurre = 30 vs 34 coups ; aucun départ surveillé" },
-    { "at": "2026-10-31T22:50+01:00", "step": "23/23 tests Node contre le VRAI index.html (vm) : solubilité+par, occlusion des rayons, déterminisme x2, captures (fin de tour/contact/gardien sur joueur), coups illégaux sans tour, leurre (1 usage, plus proche, gel 2 tours, contact gelé fatal), sortie verrouillée, i18n, cloneState, fuzz 40 000 actions" },
-    { "at": "2026-10-31T23:10+01:00", "step": "partie réelle navigateur local : L1 gagnée au clavier (12 coups, médaille, déblocage L2), capture L2 → « Repéré ! » → redémarrage auto complet, L4 gagnée avec leurre (gel 2→1→0), L2 gagnée (14), i18n FR/ES live, dpad tactile + Attendre/Annuler/Recommencer, mobile 390×760 sans chevauchement ; sondes pixels : faisceaux +40 luminance, murs/sol différenciés (corrigé en cours), gemme ambre/gardien rouge/créature turquoise" },
-    { "at": "2026-10-31T23:20+01:00", "step": "consult Kimi K3.1 Pro (session_2f3063c1) : indice L4 reformulé (3 langues) + verrou anti-touche-maintenue au redémarrage APPLIQUÉS ; médailles à étages refusées (spec = une médaille) ; L1 rejouée intégralement après correctifs (12/12 touches comptées, victoire, médaille)" },
-    { "at": "2026-10-31T23:35+01:00", "step": "dépôt GitHub public codex-lm/musee-endormi créé et poussé (7cd2bed jeu v1.0.0, 99a7aff preuve ownership, f412876 fix favicon) ; GitHub Pages OK https://codex-lm.github.io/musee-endormi/ ; cover.png 1280×720 générée par script PIL local" },
-    { "at": "2026-10-31T23:45+01:00", "step": "LOB7 : whoami OK (Z Code, quotas 0/2, 0/10, 0/5) ; check-local PASSED (8 entrées, 79,5 Kio) ; browser create → brouillon bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6 (idempotency creation-direct-2026-10-31-musee-endormi) ; preuve ownership commitée/poussée ; prepare LANCÉ → ÉCHEC BROWSER_RECIPE_REJECTED (favicon <link rel=icon> en data: URI = schéma d'URL externe interdit). Correctif immédiat poussé (f412876), check-local re-PASSED, tests 23/23. CONSIGNES §9 : échec de préparation = passage clos, PAS de nouvelle tentative aujourd'hui (précédent reflet). Quotas vérifiés intacts après échec (0/2, 0/10, 0/5)." }
+    {
+      "at": "2026-10-31T22:05+01:00",
+      "step": "mission lue, verrou posé, dossiers créés ; aucun draft ; automations 9h/14h30 préservées"
+    },
+    {
+      "at": "2026-10-31T22:20+01:00",
+      "step": "moteur déterministe complet (patrouilles boucle/ping-pong, sentinelles rotatives, rayons occlus par murs+vitrines, leurre 2 tours, undo) + solveur BFS optimal + i18n EN/FR/ES dans un index.html autonome unique"
+    },
+    {
+      "at": "2026-10-31T22:35+01:00",
+      "step": "8 niveaux accordés au solveur : pars [12,14,16,12,24,27,30,38] ; L4 insoluble sans leurre (pédagogie garantie) ; L7 leurre = 30 vs 34 coups ; aucun départ surveillé"
+    },
+    {
+      "at": "2026-10-31T22:50+01:00",
+      "step": "23/23 tests Node contre le VRAI index.html (vm) : solubilité+par, occlusion des rayons, déterminisme x2, captures (fin de tour/contact/gardien sur joueur), coups illégaux sans tour, leurre (1 usage, plus proche, gel 2 tours, contact gelé fatal), sortie verrouillée, i18n, cloneState, fuzz 40 000 actions"
+    },
+    {
+      "at": "2026-10-31T23:10+01:00",
+      "step": "partie réelle navigateur local : L1 gagnée au clavier (12 coups, médaille, déblocage L2), capture L2 → « Repéré ! » → redémarrage auto complet, L4 gagnée avec leurre (gel 2→1→0), L2 gagnée (14), i18n FR/ES live, dpad tactile + Attendre/Annuler/Recommencer, mobile 390×760 sans chevauchement ; sondes pixels : faisceaux +40 luminance, murs/sol différenciés (corrigé en cours), gemme ambre/gardien rouge/créature turquoise"
+    },
+    {
+      "at": "2026-10-31T23:20+01:00",
+      "step": "consult Kimi K3.1 Pro (session_2f3063c1) : indice L4 reformulé (3 langues) + verrou anti-touche-maintenue au redémarrage APPLIQUÉS ; médailles à étages refusées (spec = une médaille) ; L1 rejouée intégralement après correctifs (12/12 touches comptées, victoire, médaille)"
+    },
+    {
+      "at": "2026-10-31T23:35+01:00",
+      "step": "dépôt GitHub public codex-lm/musee-endormi créé et poussé (7cd2bed jeu v1.0.0, 99a7aff preuve ownership, f412876 fix favicon) ; GitHub Pages OK https://codex-lm.github.io/musee-endormi/ ; cover.png 1280×720 générée par script PIL local"
+    },
+    {
+      "at": "2026-10-31T23:45+01:00",
+      "step": "LOB7 : whoami OK (Z Code, quotas 0/2, 0/10, 0/5) ; check-local PASSED (8 entrées, 79,5 Kio) ; browser create → brouillon bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6 (idempotency creation-direct-2026-10-31-musee-endormi) ; preuve ownership commitée/poussée ; prepare LANCÉ → ÉCHEC BROWSER_RECIPE_REJECTED (favicon <link rel=icon> en data: URI = schéma d'URL externe interdit). Correctif immédiat poussé (f412876), check-local re-PASSED, tests 23/23. CONSIGNES §9 : échec de préparation = passage clos, PAS de nouvelle tentative aujourd'hui (précédent reflet). Quotas vérifiés intacts après échec (0/2, 0/10, 0/5)."
+    },
+    {
+      "at": "2026-11-01T11:25+01:00",
+      "step": "PUBLICATION EFFECTIVE (reprise automation-93eba7d1) : update du même brouillon → prepare ready (4/4 contrôles serveur) → publish → lecteur public réellement joué (victoire L1 médaille 12/12, capture+redémarrage L2) + intégrité sha256 + captures 06-08"
+    }
   ],
   "links": {
     "repo": "https://github.com/codex-lm/musee-endormi",
@@ -38,15 +76,25 @@
     "dev": "C:/dev/zcode-games/games/musee-endormi-dev/ (load.mjs, tests.mjs 23/23, report.mjs, make_cover.py)",
     "kimi": "C:/dev/zcode-games/_private/tmp/kimi-musee-consult.txt (session_2f3063c1-a953-4663-a4d8-6106b84697e9)"
   },
-  "repo": { "name": "codex-lm/musee-endormi", "head": "f412876", "version": "1.0.0" },
+  "repo": {
+    "name": "codex-lm/musee-endormi",
+    "head": "f412876",
+    "version": "1.0.0"
+  },
   "lob7": {
     "draftId": "bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6",
-    "candidateReleaseId": "br_s_f67898c9-bd68-4680-8139-959d958a9785",
     "idempotencyKey": "creation-direct-2026-10-31-musee-endormi",
     "contributionsFile": "_private/lob7-contributions-musee.json",
-    "ownershipFile": ".lob7/ownership/bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6.txt (valeur 5bca39dc…, commitée 99a7aff)",
-    "prepare": "FAILED 2026-10-31 ~23h40 — BROWSER_RECIPE_REJECTED : favicon data: URI. Corrigé dans f412876 (push). Passage clos aujourd'hui (CONSIGNES §9).",
-    "resume": "Reprise programmée : automation dédiée « Musée endormi — publication LOB7 (reprise) » (automation-93eba7d1-7712-487b-9b63-695dc4353117), tir unique le 1er nov 11h Europe/Madrid dans la conversation d'origine — créneau calé entre les passages 9h et 14h30 pour éviter la file LOB7 partagée. Étapes : 1) whoami ; 2) browser update bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6 --ref main ; 3) browser prepare bd_s_99d20328… --rights-confirmed (BUSY = attendre 3-5 min, même brouillon) ; 4) si ready : browser publish ; 5) JOUER réellement au lecteur public + captures evidence/musee-endormi/ ; 6) compléter cette entrée + journal knownGames.museeEndormi."
+    "ownershipFile": ".lob7/ownership/bd_s_99d20328-29f6-4eb7-bb1c-6bd9da666ba6.txt (commitée 99a7aff)",
+    "prepare31/10": "FAILED — BROWSER_RECIPE_REJECTED (favicon data: URI), passage clos §9",
+    "reprise": "automation-93eba7d1 (1er nov 11h, cette conversation) : whoami OK → browser update --ref main → prepare READY (commit figé 9c0ed0e, contrôles 4/4 passed) → PUBLISH",
+    "gameId": "bg_s_33a8f14a-6c9c-432c-80a3-3c978f0d2177",
+    "variantId": "bv_s_22966dd4-a9c8-4741-8c93-64f669a94ff5",
+    "releaseId": "br_s_76b32ba7-d830-4d05-8705-37b748ded36e",
+    "version": "1.0.0",
+    "fiche": "https://lob7.com/games/bg_s_33a8f14a-6c9c-432c-80a3-3c978f0d2177?release=br_s_76b32ba7-d830-4d05-8705-37b748ded36e",
+    "lecteur": "https://lob7.com/player/br_s_76b32ba7-d830-4d05-8705-37b748ded36e",
+    "verificationPublique": "Lecteur réellement joué : Play → HUD L1 ; 12 coups comptés 1/12→12/12 (leurre) → « Level clear | 🥇 | Medal earned! » ; L2 capture contact « Caught! » → redémarrage immédiat 0/14 ; fiche vérifiée (browser get : titre/description/genres/thèmes/commandes/crédits Cédric+Z-Code+Kimi/MIT/auteur Z Code) ; sha256 servi == commit 9c0ed0e ; captures 06-08 dans evidence/musee-endormi/"
   },
   "limits": [
     "Panneau IAB de test : routage d'entrée perdu → événements DOM synthétiques via les vrais handlers du jeu ; rAF gelé hors focus → lueur de sortie ouverte non vérifiée au pixel (chemin de code partagé avec la sortie verrouillée, vérifiée) ; captures sauvées pour relecture humaine, pas inspectées visuellement par machine",
